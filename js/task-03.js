@@ -1,16 +1,21 @@
-const Storage = function(items) {
+class Storage {
+  constructor(items) {
     this.items = items
-}
-Storage.prototype.getItems = function() {
+  } 
+  getItems() {
     return this.items
+  }
+  addItem(newItem) {
+    this.items.push(newItem)    
+  }   
+  removeItem(removedItem) {
+    for (let i = 0; i < this.items.length; i++) {
+        if (removedItem === this.items[i]) {
+            this.items.splice(i, 1)
+        }
+    }
+  }
 }
-Storage.prototype.addItem = function() {
-    
-}
-Storage.prototype.removeItem = function() {
-
-}
-
 const storage = new Storage([
     'Нанитоиды',
     'Пролонгер',
