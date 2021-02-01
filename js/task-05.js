@@ -28,7 +28,7 @@ class Car {
         }
     }
     decelerate(value) {
-        if (value > 0) {
+        if (value >= 0) {
             return this.speed -= value
         }
     }
